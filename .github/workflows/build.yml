@@ -11,6 +11,10 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Install LLVM 19
+        run: choco install llvm --version=19.1.7 --allow-downgrade --force -y
+
       - name: Build the mod
         uses: geode-sdk/build-geode-mod@main
         with:
